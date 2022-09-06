@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center text-light">
+    <h1 class="display-4">Você está na Tudo-Tech!</h1>
+    <p>A sua loja tech, para o seu estilo tech!</p>
+</div>
+
+<div class="row">
+    @foreach(var product in Model.Produtos)
+    {
+        <div class="col-sm-4">
+            <div class="card text-center bg-light mb-4">
+                <img class="card-img-top" style="height:400px;" src="/images/@String.Concat(product.ImageName)" alt="imagem de @product.Nome">
+                <div class="card-header">
+                    R$ @product.Preco.ToString("F2")
+                </div>
+                <div class="card-body" style="height:124px">
+                    <h5 class="card-title">@product.Nome</h5>
+                    <p class="card-text">@product.Descricao</p>
+                </div>
+                <div class="card-footer">
+                    <div><a href="#" class="btn btn-primary">Adicionar ao Carrinho</a></div>
+                    <small class="text-muted">Estoque: @product.Estoque</small>
+                </div>
+            </div>
+        </div>
+    }
+</div>

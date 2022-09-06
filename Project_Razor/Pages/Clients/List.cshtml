@@ -1,0 +1,75 @@
+﻿@page
+@model Project_Razor.Pages.Clients.ListModel
+@{
+    Layout = "_Template";
+    ViewData["Title"] = "Listagem de Clientes";
+}
+
+<header class="container p-3">
+    <div class="row align-items-xxl-center">
+        <div class="col-sm-6">
+            <h1>@ViewData["Title"]</h1>
+            <a asp-page="Create" class="btn btn-info">Novo Cliente</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    @if (Model.Clientes.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Clientes[0].Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Clientes[0].CPF)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Clientes[0].DataNascimento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Clientes[0].Email)
+                    </th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Clientes)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(x => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => item.CPF)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => item.DataNascimento.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => item.Email)
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-primary btn-sm" asp-page="./Edit"
+                       asp-route-id="@item.Id">Alterar</a>
+                            <!--asp-page-handler=atributo que infoma o verbo http do formulário a ser enviado-->
+                            <form class="d-inline-block" asp-page-handler="delete"
+                          asp-route-id="@item.Id" method="post">
+                                <button class="btn btn-danger btn-sm"
+                                onclick="ConfirmarExclusão(this);" type="button">
+                                    Excluir
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h2>Nenhum Cliente Cadastrado</h2>
+    }
+</main>
