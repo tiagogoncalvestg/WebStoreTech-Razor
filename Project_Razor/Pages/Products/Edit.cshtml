@@ -5,11 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Product</h4>
+<h1 class="text-light">Edição de Produto</h1>
 <hr />
-<div class="row">
+<div class="row text-light">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -39,7 +37,7 @@
                 <input asp-for="Product.ImageName" class="form-control" />
                 <span asp-validation-for="Product.ImageName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

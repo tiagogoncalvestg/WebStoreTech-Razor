@@ -13,5 +13,18 @@ namespace Project_Razor.Data
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Admin>().HasData(
+                    new Admin
+                    {
+                        Nome = "sa",
+                        Senha = "1234"
+                    }
+                );
+
+             base.OnModelCreating(modelBuilder);
+        }
     }
 }

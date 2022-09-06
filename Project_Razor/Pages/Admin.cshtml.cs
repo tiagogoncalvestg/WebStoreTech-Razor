@@ -30,8 +30,8 @@ namespace Project_Razor.Pages
                 return Page();
             }
 
-            var admin = _context.Admins.Where(x => x.Nome == Admin.Nome).Where(x => x.Senha == Admin.Senha);
-            if (admin != null)
+            var admin = await _context.Admins.Where(x => x.Nome == Admin.Nome && x.Senha == Admin.Senha).ToListAsync();
+            if (admin.Count > 0)
             {
                 return RedirectToPage("/Clients/List");
             }
