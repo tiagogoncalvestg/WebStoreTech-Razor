@@ -12,11 +12,13 @@
                 <form method="post">
                     <div class="form-group">
                         <label asp-for="Admin.Nome" class="control-label"></label>
+                        <span class="text-muted">o usuário é: sa</span>
                         <input asp-for="Admin.Nome" class="form-control col-4" />
                         <span asp-validation-for="Admin.Nome" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Admin.Senha" class="control-label"></label>
+                        <span class="text-muted">a senha é: 12345678</span>
                         <input type="password" asp-for="Admin.Senha" class="form-control col-4" />
                         <span asp-validation-for="Admin.Senha" class="text-danger"></span>
                     </div>
