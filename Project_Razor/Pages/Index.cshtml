@@ -13,8 +13,8 @@
     @foreach(var product in Model.Produtos)
     {
         <div class="col-sm-4">
-            <div class="card text-center bg-light mb-4" style="height:500px;">
-                <img class="card-img-bottom" style="height:250px;" src="/images/@String.Concat(product.ImageName)" alt="imagem de @product.Nome">
+            <div class="card text-center bg-light mb-4">
+                <img class="card-img-bottom" src="/images/@String.Concat(product.ImageName)" alt="imagem de @product.Nome">
                 <div class="card-header">
                     R$ @product.Preco.ToString("F2")
                 </div>
