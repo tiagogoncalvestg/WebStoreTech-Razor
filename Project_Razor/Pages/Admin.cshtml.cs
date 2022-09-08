@@ -36,6 +36,10 @@ namespace Project_Razor.Pages
             {
                 return RedirectToPage("/Clients/List");
             }
+            else
+            {
+                return RedirectToPage("./AdminError");
+            }
 
             return Page();
         }
