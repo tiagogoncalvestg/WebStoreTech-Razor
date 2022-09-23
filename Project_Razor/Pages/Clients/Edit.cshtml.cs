@@ -18,7 +18,7 @@ namespace Project_Razor.Pages.Clients
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string? id)
         {
             if (id == null)
                 NotFound();
@@ -53,7 +53,7 @@ namespace Project_Razor.Pages.Clients
             return RedirectToPage("./List");
         }
 
-        private bool ClienteAindaExiste(int id)
+        private bool ClienteAindaExiste(string id)
         {
             return _context.Clients.Any(x => x.Id == id);
         }

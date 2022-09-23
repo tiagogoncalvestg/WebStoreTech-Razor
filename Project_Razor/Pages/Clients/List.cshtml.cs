@@ -23,7 +23,7 @@ namespace Project_Razor.Pages.Clients
             Clientes = await _context.Clients.ToListAsync();
         }
 
-        public async Task<IActionResult> OnPostDeleteAsync(int? id)
+        public async Task<IActionResult> OnPostDeleteAsync(string? id)
         {
             if (id == null)
                 return NotFound();

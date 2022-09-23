@@ -7,7 +7,7 @@ namespace Project_Razor.Models
     public class Client
     {
         [Column("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Column("nome", TypeName = "varchar(11)")]
         public string Nome { get; set; }
         [DataType(DataType.Date)]
@@ -17,5 +17,6 @@ namespace Project_Razor.Models
         public string CPF { get; set; }
         [Column("email", TypeName = "varchar(50)")]
         public string Email { get; set; }
+        public ShoppingCart shoppingCart { get; set; }
     }
 }

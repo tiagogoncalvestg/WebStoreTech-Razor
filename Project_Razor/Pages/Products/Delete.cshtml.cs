@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Project_Razor.Data;
 using Project_Razor.Models;
 
 namespace Project_Razor.Pages.Products
@@ -20,7 +15,7 @@ namespace Project_Razor.Pages.Products
         }
 
         [BindProperty]
-      public Product Product { get; set; } = default!;
+        public Product Product { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(string? id)
         {
@@ -35,7 +30,7 @@ namespace Project_Razor.Pages.Products
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Product = product;
             }
